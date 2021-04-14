@@ -1,4 +1,4 @@
-package com.yukms.algorithms.p138;
+package com.yukms.algorithms.fundamentals;
 
 /**
  * @author yukms 2021/4/13 21:47
