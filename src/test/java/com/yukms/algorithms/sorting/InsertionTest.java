@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author yukms 2021/4/14 14:40
+ * @author yukms 2021/4/15 16:45
  */
-class SortingTest extends BaseTest {
+class InsertionTest extends BaseTest {
     @Test
-    public void test_sorting() throws IOException {
+    public void test_sort() throws IOException {
         Comparable<?>[] a = read("tiny.txt");
-        new Selection().sort(a);
+        new Insertion().sort(a);
         Assertions.assertTrue(Sorting.isSorted(a));
     }
 }
