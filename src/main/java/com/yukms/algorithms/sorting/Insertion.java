@@ -1,6 +1,8 @@
 package com.yukms.algorithms.sorting;
 
 /**
+ * 插入排序
+ *
  * @author yukms 2021/4/15 15:47
  */
 public class Insertion extends Sorting {
