@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 /**
  * @author yukms 2021/4/20 17:22
  */
-class MergeTest extends BaseTest {
+class MergeTDTest extends BaseTest {
     @Test
     public void test_sort() throws IOException {
         Comparable<?>[] a = read("tiny.txt");

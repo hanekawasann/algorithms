@@ -1,7 +1,7 @@
 package com.yukms.algorithms.sorting;
 
 /**
- * 自顶向下
+ * 自顶向下 top-down
  *
  * @author yukms 2021/4/20 16:57
  */
