@@ -1,26 +1,39 @@
 package com.yukms.algorithms.sorting;
 
 /**
- * @author yukms 2021/4/20 16:57
+ * @author yukms 2021/4/21 15:15
  */
-public class Merge extends AbstractMerge {
-    @Override
-    public void sort(Comparable[] a) {
-        aux = new Comparable[a.length];
-        sort(a, 0, a.length - 1);
-    }
+public abstract class Merge extends Sorting {
+    protected Comparable[] aux;
 
-    private void sort(Comparable[] a, int lo, int hi) {
-        // 将数组a[lo..hi]有序
-        if (hi <= lo) {
-            return;
+    /**
+     * 原地归并
+     */
+    protected void merge(Comparable[] a, int lo, int mid, int hi) {
+        // 将 a[lo..mid] 和 a[mid..hi] 归并
+        int i = lo;
+        int j = mid + 1;
+
+        // 将a[lo..hi]复制到aux[lo..hi]
+        for (int k = lo; k <= hi; k++) {
+            aux[k] = a[k];
         }
-        int mid = lo + (hi - lo) / 2;
-        // 将左半边排序
-        sort(a, lo, mid);
-        // 将右半边排序
-        sort(a, mid + 1, hi);
-        // 归并结果
-        merge(a, lo, mid, hi);
+
+        // 归并回到a[lo..hi]
+        for (int k = lo; k <= hi; k++) {
+            if (i > mid) {
+                // 左半边用尽（取右半边元素）
+                a[k] = aux[j++];
+            } else if (j > hi) {
+                // 右半边用尽（取左半边元素）
+                a[k] = aux[i++];
+            } else if (less(aux[j], aux[i])) {
+                // 右半边的当前元素小于左半边的当前元素（取右半边的元素）
+                a[k] = aux[j++];
+            } else {
+                // 左半边的当前元素小于右半边的当前元素（取左半边的元素）
+                a[k] = aux[i++];
+            }
+        }
     }
 }

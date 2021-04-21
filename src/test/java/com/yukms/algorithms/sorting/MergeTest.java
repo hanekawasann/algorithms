@@ -13,7 +13,7 @@ class MergeTest extends BaseTest {
     @Test
     public void test_sort() throws IOException {
         Comparable<?>[] a = read("tiny.txt");
-        new Merge().sort(a);
+        new MergeTD().sort(a);
         Assertions.assertTrue(Sorting.isSorted(a));
     }
 }
