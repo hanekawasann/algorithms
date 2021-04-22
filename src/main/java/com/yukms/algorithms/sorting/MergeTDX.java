@@ -35,7 +35,7 @@ public class MergeTDX extends MergeTD {
             return;
         }
 
-        // 将数据从辅助数组排序到
+        // 将数据从辅助数组排序到输入数组
         merge(src, dst, lo, mid, hi);
     }
 
