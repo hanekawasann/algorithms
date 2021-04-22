@@ -8,21 +8,21 @@ package com.yukms.algorithms.sorting;
 public class MergeTD extends Merge {
     @Override
     public void sort(Comparable[] a) {
-        aux = new Comparable[a.length];
-        sort(a, 0, a.length - 1);
+        Comparable[] aux = new Comparable[a.length];
+        sort(a, aux, 0, a.length - 1);
     }
 
-    private void sort(Comparable[] a, int lo, int hi) {
+    protected void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
         // 将数组a[lo..hi]有序
         if (hi <= lo) {
             return;
         }
         int mid = lo + (hi - lo) / 2;
         // 将左半边排序
-        sort(a, lo, mid);
+        sort(a, aux, lo, mid);
         // 将右半边排序
-        sort(a, mid + 1, hi);
+        sort(a, aux, mid + 1, hi);
         // 归并结果
-        merge(a, lo, mid, hi);
+        merge(a, aux, lo, mid, hi);
     }
 }
