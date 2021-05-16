@@ -13,7 +13,7 @@ public abstract class BaseSortingTest extends BaseTest {
     @Test
     public void test_tiny() throws IOException {
         Comparable[] a = read("tiny.txt");
-        new Insertion().sort(a);
+        sort(a);
         Assertions.assertTrue(Sorting.isSorted(a));
     }
 

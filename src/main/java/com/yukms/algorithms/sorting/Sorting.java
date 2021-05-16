@@ -6,7 +6,7 @@ package com.yukms.algorithms.sorting;
 public abstract class Sorting {
     public abstract void sort(Comparable[] a);
 
-    protected void exchange(Comparable[] a, int i, int j) {
+    protected static void exchange(Comparable[] a, int i, int j) {
         Comparable temp = a[i];
         a[i] = a[j];
         a[j] = temp;
@@ -23,6 +23,13 @@ public abstract class Sorting {
             }
         }
         return true;
+    }
+
+    public static boolean eq(Comparable v, Comparable w) {
+        if (v == w) {
+            return true;
+        }
+        return v.compareTo(w) == 0;
     }
 
     protected void show(Comparable[] a) {

@@ -9,7 +9,7 @@ public class Quick extends Sorting {
         sort(a, 0, a.length - 1);
     }
 
-    private void sort(Comparable[] a, int lo, int hi) {
+    protected void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo) {
             return;
         }
@@ -21,7 +21,7 @@ public class Quick extends Sorting {
         sort(a, j + 1, hi);
     }
 
-    private int partition(Comparable[] a, int lo, int hi) {
+    protected int partition(Comparable[] a, int lo, int hi) {
         // 将数组切分为a[lo..i-1], a[i], a[i+1..hi]
         // 左右扫描指针
         int i = lo;
