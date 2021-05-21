@@ -33,7 +33,13 @@ public abstract class ST<Key extends Comparable<Key>, Value> implements Iterable
 
     public abstract Key max();
 
+    /**
+     * 比Key大的中最小的
+     */
     public abstract Key ceiling(Key key);
 
+    /**
+     * 比Key小的中最大的
+     */
     public abstract Key floor(Key key);
 }
